@@ -46,8 +46,8 @@ def print_card (list_of_cards): #--Esta función imprime las cartas de una lista
     dicc_palo2={"corazones":"║    ♥║","picas":"║    ♠║","trebol":"║    ♣║","diamantes":"║    ♦║"}
     dicc_card={1:"║  1  ║",2:"║  2  ║",3:"║  3  ║",4:"║  4  ║",5:"║  5  ║",6:"║  6  ║",7:"║  7  ║",8:"║  8  ║",9:"║  9  ║",10:"║  10 ║",11:"║  J  ║",12:"║  Q  ║",13:"║  k  ║"}
 
-
     num_cartas=len(list_of_cards)#--Xa saber cuantas cartas vamos a printear
+    
     for i in range (num_cartas): #-- Xa imprimir linea a linea n cartas 
         print ("╔═════╗",end="") #--Imprime la parte de arriba
     print("")
@@ -72,4 +72,72 @@ def print_card (list_of_cards): #--Esta función imprime las cartas de una lista
 ##mi_mano=[['picas', 2], ['corazones', 10], ['picas', 4], ['corazones', 4], ['trebol', 6]]
 ##print_card (mi_mano)
 
-    
+
+#------------------MODULO QUE MUESTRA LAS IMAGENES DEL TRAGAPERRAS--------------#
+
+import random
+
+# Las intrucciones para imprimir las imagenes del tragaperras.
+# Falta implementarla en el tragaperras como un modulo, para que funcione.
+
+#--------------Función para mostrar las imágenes------------------------#
+# LAS SIGUIENTES FUNCIONES SE DEBEN PROBAR AL FINAL DE ESTE MÓDULO, POR LAS VARIABLES.
+def rueda(pri,seg,ter): # Requerimos de 3 valores para sacar las imagenes.
+    print("\t ╔" + "═"*11 + "╗\t ╔" + "═"*11 + "╗\t ╔" + "═"*11 + "╗") # primera linea
+    for x in range(6): # Bucle for para sacar la imagen entera
+        print("\t",dicc[pri][x],"\t",dicc[seg][x],"\t",dicc[ter][x]) 
+    print("\t ╚" + "═"*11 + "╝\t ╚" + "═"*11 + "╝\t ╚" + "═"*11 + "╝") # ultima linea
+
+# El bucle usa los numeros para imprimir la variable del diccionario.
+# Ejemplo: diccionario con clave[1] y valor numerico[0] imprime la variable (0) de la clave (1)
+# Explicación: Le damos un valor que la funcion recoge como una clave del diccionario y este imprime la imagen.
+
+
+#--------------Función para ir cambiando las imágenes, en caso de no ganar--------------#
+def aleat(): # Una función para mostrar aleatoriamente las imagenes que te da el juego.
+    # Los valores se dan de esta forma debido a que no se puede hacer usando un bucle.
+    pri=random.randint(1,3) 
+    seg=random.randint(1,3)
+    ter=random.randint(1,3)
+    if pri==seg==ter: # Valida si todos las imagenes son iguales.
+        seg += 1 # Le suma 1 al valor de la segunda imagen, para que sea diferente del resto.
+        if seg not in dicc: # Si el valor de la segunda imagen no esta asociado a ninguna clave del diccionario hace esta acción.
+            seg -= 2 # Le resta 2 al valor de la segunda imagen, para que sea diferente del resto.
+    rueda(pri,seg,ter) # Llama a la función que muestra las imagenes.
+    return
+
+# Si hay problemas con el programa del juego, es posible que le estén afectando las variables.
+# Recomiendo usar las variables de esta forma, ya que sería código innecesario dentro del programa final.
+# En cualquier caso las dos cosas hacen lo mismo.
+
+# Variables para mostrar un diamante
+di1="║ " + "╔"+"═"*7+"╗"+ " ║"
+di2="║ " + "╚╗"+" "*5+"╔╝" + " ║"
+di3="║  " + "╚╗"+" "*3+"╔╝" + "  ║"
+di4="║   " + "╚╗"+" "+"╔╝" "   ║"
+di5="║    " + "╚"+"═"+"╝" + "    ║"
+di6="║" + " "*11 + "║"
+diam=[di1,di2,di3,di4,di5,di6]
+# Variables para mostrar una fresa
+fre1="║ " + " "*5+"╔═╗" + "  ║"
+fre2="║ " + "╔"+"═"*4+"╝ ╚╗" + " ║"
+fre3="║ " + "║"+" "*5+"╔═╝" + " ║"
+fre4="║ " +"║"+" "*5+"║" + "   ║"
+fre5="║ " +"╚"+"═"*5+"╝" + "   ║"
+fre6="║" + " "*11 + "║"
+fres=[fre1,fre2,fre3,fre4,fre5,fre6]
+# Variables para mostrar otra imagen
+ot1="║ "+"╗"+" "*7+"╔"+" ║"
+ot2="║ "+"╚═╗"+" "*3+"╔═╝"+" ║"
+ot3="║   "+"╚═╗"+"═╝"+" "*2+" ║"
+ot4="║   "+"╔═╝"+"═╗"+" "*2+" ║"
+ot5="║ "+"╔═╝"+" "*3+"╚═╗"+" ║"
+ot6="║ "+"╝"+" "*7+"╚"+" ║"
+otr=[ot1,ot2,ot3,ot4,ot5,ot6]
+# Diccionario con las listas de las formas.
+dicc={1:diam,2:fres,3:otr}
+
+#----------------TEST DEL MÓDULO-----------#
+##rueda(1,2,3)
+##aleat()
+

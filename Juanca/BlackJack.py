@@ -8,7 +8,7 @@ cartas_player=[]
 dicc_palo={"corazones":"║♥    ║","picas":"║♠    ║","trebol":"║♣    ║","diamantes":"║♦    ║"}
 dicc_palo2={"corazones":"║    ♥║","picas":"║    ♠║","trebol":"║    ♣║","diamantes":"║    ♦║"}
 
-#------------------------------ XA OBTENER CARTA ALEATORIA ---------------------------------------------------
+#------------------------------ PARA OBTENER CARTA ALEATORIA ---------------------------------------------------
 def random_card ():
     carta_player=[]
     palo=randrange(0,4)
@@ -18,11 +18,11 @@ def random_card ():
     cartas_player.append(carta_player)
     return cartas_player
 
-#-------------------------------XA IMPRIMIR LAS CARTAS---------------------------------------------------------
+#-------------------------------PARA IMPRIMIR LAS CARTAS---------------------------------------------------------
 def print_c ():
-    num_cartas=len(cartas_player)#--Xa saber cuantas cartas
+    num_cartas=len(cartas_player)#--Para saber cuantas cartas
     for i in range (num_cartas):
-    print ("╔═════╗",end="")
+        print ("╔═════╗",end="")
     print("")
     for i in range (num_cartas):    
        print (dicc_palo[cartas_player [i][0]],end="")
@@ -53,11 +53,9 @@ while cont =="C":
         if apuesta in lista_validacion:
             validacion="T"
             dinero=dinero-apueta   #!!!---------------------dinero tiene que ser en comun  !!!!
-    for i in range 2:
-            
-    
-            
+    for i in range (2):
+        cont="Z"
 
 
 
-    cont="Z"
+        
