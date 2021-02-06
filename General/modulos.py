@@ -11,9 +11,9 @@ ejemplo_carta_1="""
 from random import randrange  #!!!  necesitamos tener importado randrange:   from random import randrange
 #!!!x probar!!! limites variable etc...
 
-palo=["corazones","picas","trebol","diamantes"]
-
 def random_card (num_cartas,lista_cartas): #--Esta funcion crea cartas aleatorias, el primer parametro ha de ser un int y el segundo una lista
+
+    palo=["corazones","picas","trebol","diamantes"]
     for i in range (num_cartas):  #-- Xa crear n cantidad de cartas
         carta_player=[]  #-- Lista xa informacion de 1 carta, la que estamos haciendo
         a=randrange(0,4)#-- Xa elegir palo random de la lista palo  
@@ -28,7 +28,7 @@ def random_card (num_cartas,lista_cartas): #--Esta funcion crea cartas aleatoria
 #--La función tiene el siguiente funcionamiento: El primer bucle sirve xa crear n cantidad de cartas, carta_player es una lista donde guardaremos la información (numero y palo)
 #    de una carta. Creamos un palo aleatorio y un numero aleatorio, lo añadimos a carta_player que contiene la informacion de una sola carta ( la creada) y añadimos esta lista a otra
 #    dada por parámetro que sera nuestra mano. hacemos return de esta lista.
-#-- EJEMPLO ==> mi_mano = random_card (2,mi_mano), necesitamos : from random import randrange
+#-- EJEMPLO ==> mi_mano = random_card (2,mi_mano), necesitamos importar : from random import randrange
 
 #----- DEJO COMENTADO EL TEST QUE LE HICE A LA FUNCION-------
 
@@ -39,26 +39,37 @@ def random_card (num_cartas,lista_cartas): #--Esta funcion crea cartas aleatoria
 
 #-------------------------------XA IMPRIMIR LAS CARTAS---------------------------------------------------------
 
-def print_c (list_to_print): #--Esta función imprime las cartas de una lista de listas <== IMP. que sera la mano del jugador
-    num_cartas=len(cartas_player)#--Xa saber cuantas cartas vamos a printear
-    for i in range (num_cartas):
-    print ("╔═════╗",end="")
+
+def print_card (list_of_cards): #--Esta función imprime las cartas de una lista de listas <== IMP. que sera la mano del jugador
+
+    dicc_palo={"corazones":"║♥    ║","picas":"║♠    ║","trebol":"║♣    ║","diamantes":"║♦    ║"}
+    dicc_palo2={"corazones":"║    ♥║","picas":"║    ♠║","trebol":"║    ♣║","diamantes":"║    ♦║"}
+    dicc_card={1:"║  1  ║",2:"║  2  ║",3:"║  3  ║",4:"║  4  ║",5:"║  5  ║",6:"║  6  ║",7:"║  7  ║",8:"║  8  ║",9:"║  9  ║",10:"║  10 ║",11:"║  J  ║",12:"║  Q  ║",13:"║  k  ║"}
+
+
+    num_cartas=len(list_of_cards)#--Xa saber cuantas cartas vamos a printear
+    for i in range (num_cartas): #-- Xa imprimir linea a linea n cartas 
+        print ("╔═════╗",end="") #--Imprime la parte de arriba
     print("")
     for i in range (num_cartas):    
-       print (dicc_palo[cartas_player [i][0]],end="")
+       print (dicc_palo[list_of_cards [i][0]],end="") #--Usa un diccionario xa decirle que figura debe printear, n veces
     print("")
-    for i in range (num_cartas):
-        print(dicc_card[cartas_player [i][1]],end="")
+    for i in range (num_cartas):                      #--Igual que la anterior pero con numeros
+        print(dicc_card[list_of_cards [i][1]],end="")
     print("")
     for i in range (num_cartas):    
-       print (dicc_palo2[cartas_player [i][0]],end="")
+       print (dicc_palo2[list_of_cards [i][0]],end="")#--Xa la figura de abajo, n veces
     print("")
-    for i in range (num_cartas):
+    for i in range (num_cartas): #--Parte de abajo de la carta, n veces
         print("╚═════╝",end="")
     print("")
 
+#--Esta funcion imprime cartas una al lado de otra, para que sea asi debe ser linea a linea. Por eso utilizamos bucles for (la cantidad de cartas a printear)
+#   para los palos y los numeros. Tambien usamos diccionarios que segun lo que introduzcas imprime. x ej :"picas":"║♠    ║" y asi vamos cambiando segun que cartas.    
 
+#----- DEJO COMENTADO EL TEST QUE LE HICE A LA FUNCION-------
 
-
+##mi_mano=[['picas', 2], ['corazones', 10], ['picas', 4], ['corazones', 4], ['trebol', 6]]
+##print_card (mi_mano)
 
     
