@@ -1,0 +1,20 @@
+              3-02-2021  Miércoles
+
+Empiezo con el programa de carreras de caballos y creo la primera funcion.
+La función es simple, solo es el dibujo del caballo y el "movimiento".
+Tiene el nombre de 'caballo()' y seguramente añada algunos cambios posteriormente
+
+              4-02-2021  Jueves 
+
+Creo dos funciones, la función 'menu_caballos()', que muestra en pantalla los caballos
+que se han elegido aleatoriamente con la función 'caballos_elegidos()'.
+
+              6-02-2021  Sábado 
+
+Alejandro me ayuda a reducir el código de la función de 'caballos_elegidos()' y creo una función 
+para cada caballo, para que de este modo cada uno pueda avanzar de una manera.
+
+              7-02-2021  Domingo 
+
+
+
