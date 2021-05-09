@@ -1,4 +1,3 @@
-# ruleta prueba
 from os import system
 
 dinero = 0
