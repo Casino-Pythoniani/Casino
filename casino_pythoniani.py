@@ -1,5 +1,5 @@
 
-from casino_pythoniani_modules import *
+from Menu.casino_pythoniani_modules import *
 # from bingo.main_binhimport *
 # from traga.main_traga import *
 from Ruleta_Europea.tableromovimiento import *

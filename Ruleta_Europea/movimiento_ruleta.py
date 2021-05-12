@@ -21,7 +21,7 @@ def ruleta_total():
         lista_ruleta[8].append('   ')
 
     # Se consigue El valor de random del archivo taleromovimiento.py
-    archivo1 = open("archivo1.txt","r")
+    archivo1 = open("./Ruleta_Europea/archivo1.txt","r")
     random = int(archivo1.read())
     archivo1.close()
 

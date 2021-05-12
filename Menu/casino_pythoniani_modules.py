@@ -1,5 +1,5 @@
 import os
-from casino_pythoniani_ascii import *
+from Menu.casino_pythoniani_ascii import *
 clear = lambda: os.system('cls') 
 from pynput.keyboard import Listener
 

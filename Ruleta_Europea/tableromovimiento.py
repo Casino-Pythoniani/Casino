@@ -572,7 +572,7 @@ def ejecutar_ruleta():
         #valor al azar
         random = choice(l_random)
 
-        archivo1 = open ("archivo1.txt","w")
+        archivo1 = open ("./Ruleta_Europea/archivo1.txt","w")
         archivo1.write(str(random))
         archivo1.close()
 
