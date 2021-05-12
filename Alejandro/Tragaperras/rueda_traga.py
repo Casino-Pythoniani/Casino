@@ -1,6 +1,6 @@
 
-
 import random
+#from playsound import playsound
 
 # Las intrucciones para imprimir las imagenes del tragaperras.
 # Flata implementarla en el tragaperras como un modulo.
@@ -28,35 +28,21 @@ def aleat(): # Una función para mostrar aleatoriamente las imagenes que te da e
     return
 
 
-# Variables para mostrar un diamante
-di1="║ " + "╔"+"═"*7+"╗"+ " ║"
-di2="║ " + "╚╗"+" "*5+"╔╝" + " ║"
-di3="║  " + "╚╗"+" "*3+"╔╝" + "  ║"
-di4="║   " + "╚╗"+" "+"╔╝" "   ║"
-di5="║    " + "╚"+"═"+"╝" + "    ║"
-di6="║" + " "*11 + "║"
-diam=[di1,di2,di3,di4,di5,di6]
-# Variables para mostrar una fresa
-fre1="║ " + " "*5+"╔═╗" + "  ║"
-fre2="║ " + "╔"+"═"*4+"╝ ╚╗" + " ║"
-fre3="║ " + "║"+" "*5+"╔═╝" + " ║"
-fre4="║ " +"║"+" "*5+"║" + "   ║"
-fre5="║ " +"╚"+"═"*5+"╝" + "   ║"
-fre6="║" + " "*11 + "║"
-fres=[fre1,fre2,fre3,fre4,fre5,fre6]
-# Variables para mostrar otra imagen
-ot1="║ "+"╗"+" "*7+"╔"+" ║"
-ot2="║ "+"╚═╗"+" "*3+"╔═╝"+" ║"
-ot3="║   "+"╚═╗"+"═╝"+" "*2+" ║"
-ot4="║   "+"╔═╝"+"═╗"+" "*2+" ║"
-ot5="║ "+"╔═╝"+" "*3+"╚═╗"+" ║"
-ot6="║ "+"╝"+" "*7+"╚"+" ║"
-otr=[ot1,ot2,ot3,ot4,ot5,ot6]
+# Lista para mostrar un diamante
+diamante=["║ " + "╔"+"═"*7+"╗"+ " ║","║ " + "╚╗"+" "*5+"╔╝" + " ║","║  " + "╚╗"+" "*3+"╔╝" + "  ║","║   " + "╚╗"+" "+"╔╝" "   ║","║    " + "╚"+"═"+"╝" + "    ║","║" + " "*11 + "║"]
 
-dicc={1:diam,2:fres,3:otr}
+# Lista para mostrar una fresa
+fresa=["║ " + " "*5+"╔═╗" + "  ║","║ " + "╔"+"═"*4+"╝ ╚╗" + " ║","║ " + "║"+" "*5+"╔═╝" + " ║","║ " +"║"+" "*5+"║" + "   ║","║ " +"╚"+"═"*5+"╝" + "   ║","║" + " "*11 + "║"]
 
-# rueda(1,2,3)
+# Lista para mostrar otra imagen
+otro=["║ "+"╗"+" "*7+"╔"+" ║","║ "+"╚═╗"+" "*3+"╔═╝"+" ║","║   "+"╚═╗"+"═╝"+" "*2+" ║","║   "+"╔═╝"+"═╗"+" "*2+" ║","║ "+"╔═╝"+" "*3+"╚═╗"+" ║","║ "+"╝"+" "*7+"╚"+" ║"]
 
+dicc={1:diamante,2:fresa,3:otro}
+
+
+##rueda(1,2,3)
+##aleat()
+#playsound(musica.mp3) #Importa el módulo playsound usando el fichero musica.mp3
 
 
 

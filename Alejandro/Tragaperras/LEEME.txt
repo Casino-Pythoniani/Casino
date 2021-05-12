@@ -1,0 +1,41 @@
+
+Instrucciones para poder jugar a la tragaperras:
+
+-Requisitos:
+ -Tener instalado python
+ -Tener instalado VLC media player
+ -Asegurarse de que la version de python y de VLC sean compatibles, es decir, que los dos programas instalados sean de 32 o de 64 bits.
+ 
+-Modulos a instalar:
+ -Instalar pi:
+  -
+
+ -Instalar playsound:
+  -
+
+Funcionamiento interno del juego:
+Hay 2 clases:
+ -juego:
+  Esta clase tiene 5 metodos:
+   -__init__: Este método genera los atributos por defecto que tendrá el objeto.
+   -Toca: Este método genera un valor aleatorio entre 1 y el atributo self.probs, que hay dentro de __init__.
+   -MasDificil: Este método aumenta el valor de self.probs en 2.
+   -GanaJugador: Este método decide si el atributo self.azar que hay dentro de __init__ esta dentro de unos rangos, dependiendo del valor de self.azar es posible que el jugador obtenga diferentes premios o incliso ningunio.
+   -__str__: Este método muestra una informacion concreta, en este caso solo sirve para saber las probabilidades del jugador de ganar.
+
+ -usuario:
+ Esta clase tiene 3 métodos:
+  -__init__: Este es un método con nombre reservado, indica los atributos que tendrá la clase por defecto.
+  -ganar:Este método aumenta el número de fichas que tiene el usuario, si gana algún premio.
+  -__str__: Este es otro método con nombre reservado, muestra cierta informacion 
+
+Hay 2 funciones:
+ -tragaperras_empieza:
+  Esta funcion requiere de la variable opciones para funcionar como un bucle, ademas de esto sirve para que el jugador decida si quiere seguir jugando a este juego o quiere jugar a otro.
+
+ -pobre:
+  Esta funcion nos permite saber si el jugador tiene o no suficiente dinero para seguir jugando, si no es así el jugador pierde.
+
+
+
+
