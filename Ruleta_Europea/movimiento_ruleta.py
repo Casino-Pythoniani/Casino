@@ -4,8 +4,7 @@ from time import sleep
 from random import choice
 import playsound
 import vlc
-# from random2 import random
-# from tableromovimiento import random
+
 
 clear = lambda: os.system("cls")
 
@@ -22,7 +21,7 @@ def ruleta_total():
         lista_ruleta[8].append('   ')
 
     # Se consigue El valor de random del archivo taleromovimiento.py
-    archivo1 = open("archivo1.txt","r")
+    archivo1 = open("./Ruleta_Europea/archivo1.txt","r")
     random = int(archivo1.read())
     archivo1.close()
 
@@ -200,11 +199,11 @@ def ruleta_total():
 
     #Sonido del giro de la ruleta
     if veces == 2:
-            p = vlc.MediaPlayer("./musica/sonido_ruleta.mp3")
+            p = vlc.MediaPlayer("./Ruleta_Europea/musica/sonido_ruleta.mp3")
             p.audio_set_volume(volumen)
             p.play()
     else:
-        p = vlc.MediaPlayer("./musica/sonido_ruleta_3vueltas.mp3")
+        p = vlc.MediaPlayer("./Ruleta_Europea/musica/sonido_ruleta_3vueltas.mp3")
         p.audio_set_volume(volumen)
         p.play()
 

@@ -1,7 +1,8 @@
 
-from casino_pythoniani_modules import *
-from bingo.main_bingo import *
-from traga.main_traga import *
+from Menu.casino_pythoniani_modules import *
+# from bingo.main_binhimport *
+# from traga.main_traga import *
+from Ruleta_Europea.tableromovimiento import *
 
 fichas = 50
 
@@ -13,4 +14,7 @@ while True:
         #fichas = dinero(fichas) # falta implementar un contador del dinero
     if juego == "traga":
         fichas,opcion = ejecutar_traga(fichas)
+
+    if juego == "ruleta":
+        ejecutar_ruleta()
         
