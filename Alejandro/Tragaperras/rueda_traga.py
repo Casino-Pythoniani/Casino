@@ -47,3 +47,8 @@ dicc={1:diamante,2:fresa,3:otro}
 
 
 
+
+
+
+
+
