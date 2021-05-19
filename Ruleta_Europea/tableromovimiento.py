@@ -19,7 +19,7 @@ posy = 2
 dinero = 100
 
 #random
-random = 10
+random = None
 
 # Resultado aleatoria
 l_random = [i for i in range(37)]
@@ -37,17 +37,19 @@ copia_dinero = []
 in_help = False
 
 #Variables para usar el bucle del tablero
-ciclos = True
+ciclos_ok = [True]
+ciclos = None
 p_intro = False
 interructor_seguir = False
 int_terminar = False
 
 def ejecutar_ruleta():
-
     global ciclos
     global p_intro
     global interructor_seguir
     global int_terminar
+
+    ciclos = ciclos_ok[0]
     #Inteructor de ayuda
     # in_help = False
 
@@ -113,6 +115,7 @@ def ejecutar_ruleta():
         global lista
         global dinero
         global in_help
+        global ciclos
 
         # global ciclos
         # global p_intro
@@ -396,6 +399,8 @@ def ejecutar_ruleta():
             global int_terminar
             if p_intro == True: 
                 int_terminar = True
+            else:
+                ciclos = False
                 
         l.stop()
 
@@ -728,15 +733,23 @@ def ejecutar_ruleta():
                 
             elif int_terminar == True:
                 # borrar_teclas = input("")
-                clear()
-                p_img()
-                ficha = vlc.MediaPlayer("./Ruleta_Europea/musica/salir.mp3")
-                ficha.audio_set_volume(80)
-                ficha.play()
-                sleep(4)
-                # print("Fin de la partida")
+                # clear()
+                # p_img()
+                # ficha = vlc.MediaPlayer("./Ruleta_Europea/musica/salir.mp3")
+                # ficha.audio_set_volume(80)
+                # ficha.play()
+                # sleep(4)
+                # # print("Fin de la partida")
                 ciclos = False
-            
+    borrar_teclas = input("")
+    clear()
+    p_img()
+    ficha = vlc.MediaPlayer("./Ruleta_Europea/musica/salir.mp3")
+    ficha.audio_set_volume(80)
+    ficha.play()
+    print(ciclos_ok)
+    print(ciclos)
+    sleep(4)    
 
 
         
