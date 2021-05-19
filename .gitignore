@@ -1,2 +1,3 @@
 Lorenzo/__pycache__/*
 *.txt
+!Modulos_necesarios.txt
