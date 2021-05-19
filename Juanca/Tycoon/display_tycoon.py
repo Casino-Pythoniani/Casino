@@ -484,10 +484,9 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
             ♠                 ║  MAQUINAS   ║  '''+self.lista_opcion_compra[0][0]+'''      ║ DECORACION ║  '''+self.lista_opcion_compra[0][1]+'''       ║    SALIR    ║  '''+self.lista_opcion_compra[0][2]+'''                    ♠
             ♥                 ╚═════════════╝           ╚════════════╝            ╚═════════════╝                         ♥
             ♦                                                                                                             ♦                                                     
-            ♣                         o.. te has equivocado y quieres volver ?.. pulsa SALIR                              ♣
-            ♠                                                                                                             ♠                                                                                                                                                                    
+            ♣                         o.. te has equivocado y quieres volver ?.. pulsa SALIR                              ♣ 
             ♦                                                                                                             ♦
-            ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥  ''')
+            ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ''')
 
 
     def opciones_compra (self):
@@ -544,9 +543,9 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
             ♦                                                                                                             ♦
             ♣         ╔═════════════╗          ╔═════════════╗           ╔═════════════╗         ╔═════════════╗          ♣ 
             ♠         ║    DADOS    ║  '''+self.lista_maquinas [1][0]+'''     ║   RULETA    ║  '''+self.lista_maquinas [1][1]+'''      ║    BINGO    ║  '''+self.lista_maquinas [1][2]+'''    ║  CARRERAS   ║  '''+self.lista_maquinas [1][3]+'''     ♠
-            ♥         ╚═════════════╝          ╚═════════════╝           ╚═════════════╝         ╚═════════════╝          ♥                                                                                                                                                                       
-            ♣                                                                                                             ♣
-            ♠         ╔═════════════╗          ╔═════════════╗        ELIGE UNA MAQUINA                                   ♠                                                                                                                                                                    
+            ♠         ╚═════════════╝          ╚═════════════╝           ╚═════════════╝         ╚═════════════╝          ♦
+            ♥                                                                                                             ♥
+            ♦         ╔═════════════╗          ╔═════════════╗                                                            ♦                                                                                         
             ♦         ║  COMPRAR $$ ║  '''+self.lista_maquinas [2][0]+'''     ║    SALIR    ║  '''+self.lista_maquinas [2][1]+'''              FIJATE BIEN EN LA DESCRIPCION !          ♥
             ♥         ╚═════════════╝          ╚═════════════╝                                    Y .. A COMPRAR !!       ♣
             ♣                                                                                                             ♦
@@ -727,14 +726,14 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
         print('''
           ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥
           ♦                                                                                                             ♦
-          ♠                                     ES ASI COMO QUIERES QUE QUEDE ??                                        ♠                                
+          ♠                                     ES ASI COMO QUIERES QUE QUEDE ??                                        ♠                                 
           ♦                                                                                                             ♦
           ♣                   ╔═════════════╗                                      ╔═════════════╗                      ♣ 
-          ♠                   ║   INSTALAR  ║  '''+self.lista_instalar [0][0]+'''                                 ║   CANCELAR  ║  '''+self.lista_instalar [0][1]+'''                 ♠
-          ♥                   ╚═════════════╝                                      ╚═════════════╝                      ♥
-          ♠                                                                                                             ♠                                                                                                                                                                
-          ♣            ESTA PERFECTAMENTE DONDE ESTA !!                     QUIZAS UN POCO MAS A LA DERECHA ....        ♣
-          ♠                                                                                                             ♠                                                                                                                                                                       
+          ♠                   ║   INSTALAR  ║  '''+self.lista_instalar [0][0]+'''                                 ║   CANCELAR  ║  '''+self.lista_instalar [0][1]+'''                 ♠ 
+          ♣                   ╚═════════════╝                                      ╚═════════════╝                      ♠
+          ♦                                                                                                             ♦                               
+          ♣            ESTA PERFECTAMENTE DONDE ESTA !!                     QUIZAS UN POCO MAS A LA DERECHA ....        ♠
+          ♣                                                                                                             ♦
           ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥  ''')
  
 
@@ -796,7 +795,8 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
             ♠         ║   BALDOSAS  ║  '''+self.lista_display_decoracion [1][0]+'''     ║    SUELO    ║  '''+self.lista_display_decoracion [1][1]+'''      ║   BALDOSAS  ║  '''+self.lista_display_decoracion [1][2]+'''    ║   MARMOL    ║  '''+self.lista_display_decoracion [1][3]+'''     ♠
             ♥         ║    ROTAS    ║          ║  VINILICO   ║           ║ VALENCIANAS ║         ║   PULIDO    ║          ♥
             ♦         ╚═════════════╝          ╚═════════════╝           ╚═════════════╝         ╚═════════════╝          ♦ 
-            ♣               0 $                   '''+precio1+''' $               '''+precio2+''' $              '''+precio3+''' $               ♣                                                                                                                                 
+            ♣               0 $                   '''+precio1+''' $               '''+precio2+''' $              '''+precio3+''' $               ♣    
+            ♦                                                                                                             ♦                
             ♣                                                   GENERAL                                                   ♥
             ♠                                                                                                             ♦
             ♣         ╔═════════════╗          ╔═════════════╗           ╔═════════════╗         ╔═════════════╗          ♣ 
@@ -905,8 +905,7 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
             ♥                 ╚═════════════╝           ╚════════════╝            ╚═════════════╝                         ♥
             ♦                                                                                                             ♦                                                     
             ♣                         o.. te has equivocado y quieres volver ?.. pulsa SALIR                              ♣
-            ♠                                                                                                             ♠                                                                                                                                                                    
-            ♦                                                                                                             ♦
+            ♠                                                                                                             ♠      
             ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥  ''')
 
 
@@ -970,10 +969,9 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
           ♠                                                                                                              ♠                                
           ♣                                             ╔═════════════╗                                                  ♣ 
           ♠                                             ║    VOLVER   ║  '''+self.lista_ver_mapa[0][0]+'''                                             ♠
-          ♥                                             ╚═════════════╝                                                  ♥
-          ♠                                                                                                              ♠                                                                                                                                                                
-          ♣                                                                  PULSA ENTER PARA VOLVER AL MENU             ♣                                                                                                                                                                       
-          ♦                                                                                                              ♦
+          ♠                                             ╚═════════════╝                                                  ♠                                                                                     
+          ♣                                                                  PULSA ENTER PARA VOLVER AL MENU             ♦
+          ♣                                                                                                              ♦
           ♥  ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥ ♦ ♣ ♠ ♥  
           
                                                   ''' )
