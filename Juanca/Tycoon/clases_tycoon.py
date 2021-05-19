@@ -537,7 +537,8 @@ class objetos ():
         self.poker = [["╔══","═══","═══","══╗"],["║  ","   ","   ","  ║"],["║  "," PO","KER","  ║"],["║  ","   ","   ","  ║"],["╚══","═══","═══","══╝"]]
         self.b_jack =  [["╔══","═══","═══","══╗"],["║  ","BLA","CK ","  ║"],["║  ","  J","ACK","  ║"],["╚══","═══","═══","══╝"]]
         self.bingo = [["B ▀"," ▀ ","▀ B"],["I ▀"," ▀ ","▀ I"],["N ▀"," ▀ ","▀ N"],["G  ","▀▀▀","  G"],]
-        self.carreras = [["H O"," R ","S E"],["R o"," o ","o R"],["U o"," o ","o U"],["N  ","▄▄▄","  N"],]
+        self.carreras = [["H ▀"," ▀ ","▀ H"],["R ▀"," ▀ ","▀ R"],["U ▀"," ▀ ","▀ U"],["N  ","▀▀▀","  N"],]
+        # [["H O"," R ","S E"],["R o"," o ","o R"],["U o"," o ","o U"],["N  ","▀▀▀","  N"],]
 
         #  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         #  Las caracteristicas de abajo deberan de calibrarse al acabar el juego para conseguir una experiencia optima
@@ -570,7 +571,7 @@ class objetos ():
             return self.poker
 
         elif maquina == "baccarat":
-            return  self.c_baccarat
+            return  self.baccarat
 
         elif maquina == "dados":
             return self.dados
