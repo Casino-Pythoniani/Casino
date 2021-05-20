@@ -16,7 +16,7 @@ posx = 1
 posy = 2
 
 #Dinero del jugador
-dinero = 100
+dinero = None
 
 #random
 random = None
@@ -43,12 +43,17 @@ p_intro = False
 interructor_seguir = False
 int_terminar = False
 
-def ejecutar_ruleta():
+def ejecutar_ruleta(fichas_m):
     global ciclos
     global p_intro
     global interructor_seguir
     global int_terminar
+    global dinero
 
+    #Recibe las fichas compartidas
+    dinero = fichas_m
+
+    #Hace una copia del valor True para reiniciar la partida
     ciclos = ciclos_ok[0]
     #Inteructor de ayuda
     # in_help = False
@@ -747,8 +752,20 @@ def ejecutar_ruleta():
     ficha = vlc.MediaPlayer("./Ruleta_Europea/musica/salir.mp3")
     ficha.audio_set_volume(80)
     ficha.play()
-    print(ciclos_ok)
-    print(ciclos)
+
+    #Para saliar con las monedas que estan en el tablero y no perderlas
+    #Almazena las apuestas para saber si a apostado
+    t_apuesta = 0 
+        
+    #Busca en el tablero donde se a apostado y lo almazena en el diccionario
+    for i in d_fichas:
+        if d_fichas[i] != "":
+            t_apuesta += 1 
+            
+    if t_apuesta > 0 :
+        b_fichas()
+        dinero = copia_dinero[0]
+
     sleep(4)
     return dinero
 

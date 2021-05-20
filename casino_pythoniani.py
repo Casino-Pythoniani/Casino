@@ -18,9 +18,10 @@ while tecla != "Key.esc" and fichas > 0:
     elif juego == "traga":
         fichas = ejecutar_traga(fichas)
     elif juego == "ruleta":
-        fichas = ejecutar_ruleta()
+        fichas = ejecutar_ruleta(fichas)
         #fichas = ejecutar_ruleta(fichas) # falta devolver el dinero de la ruleta
         # Hay que validar la cantidad de dinero que tiene el jugador, para detenerlo de seguir jugando
+    
     
         
 
