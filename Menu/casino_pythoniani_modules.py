@@ -5,12 +5,14 @@ from pynput.keyboard import Listener
 
 posx = 0
 posy = 0
-romper_bucle = 0
+tecla = ""
 
 def key_recorder(key):
     global posx
     global posy
-    global romper_bucle
+    global juego
+    global tecla
+    juego = ""
 
     key = str(key).replace("'", "")
 
@@ -27,7 +29,25 @@ def key_recorder(key):
         posy -= 1
     
     elif key == 'Key.enter':
-        romper_bucle = 1
+        if posx == 0 and posy == 0:
+            juego = 'ruleta'
+        elif posx == 1 and posy == 0:
+            juego =  'bingo'
+        elif posx == 2 and posy == 0:
+            juego = 'dados'
+        elif posx == 3 and posy == 0:
+            juego = 'caballos'
+        elif posx == 0 and posy == 1:
+            juego = 'blackjack'
+        elif posx == 1 and posy == 1:
+            juego = 'traga'
+        elif posx == 2 and posy == 1:
+            juego = 'poker'
+        elif posx == 3 and posy == 1:
+            juego = 'baccarat'
+
+    elif key == "Key.esc":
+        tecla = key
 
     l.stop()
 
@@ -155,35 +175,14 @@ def display_menu_casino(): ##ascii:│ ┼ ─ ┬ ┴ ┘ └ ├ ┤ ┌ ┐  
             print(blackjack[i],' '*6,traga[i],' '*6,poker[i],' '*6,baccarat_s[i])
         titulo_baccarat()
         
-def return_juegos():
-    if posx == 0 and posy == 0:
-        return 'ruleta'
-    elif posx == 1 and posy == 0:
-        return 'bingo'
-    elif posx == 2 and posy == 0:
-        return 'dados'
-    elif posx == 3 and posy == 0:
-        return 'caballos'
-    elif posx == 0 and posy == 1:
-        return 'blackjack'
-    elif posx == 1 and posy == 1:
-        return 'traga'
-    elif posx == 2 and posy == 1:
-        return 'poker'
-    elif posx == 3 and posy == 1:
-        return 'baccarat'
-
 
 def ejecutar_menu_casino():
     global l
-    global romper_bucle
-    while True: 
-        display_menu_casino()
-        with Listener(on_press=key_recorder) as l:
-            l.join()
-            if romper_bucle == 1:
-                romper_bucle = 0
-                break
+    display_menu_casino()
+    with Listener(on_press=key_recorder) as l:
+        l.join()
+    return juego,tecla
+
 
 
  

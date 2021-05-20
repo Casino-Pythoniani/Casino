@@ -1,6 +1,7 @@
 
+# Programa creado por Alejandro Ruiz de la Asunción
 import random,time,vlc,playsound
-from rueda_traga import *
+from Tragaperras.rueda_traga import *
 from pynput.keyboard import Listener
 
 class juego:
@@ -26,25 +27,25 @@ class juego:
             time.sleep(0.5)
             rueda(1,1,1)
             user.Ganar(200)
-            print("\t\tHas ganado el grande: 200 fichas")
+            print("\t\t\tHas ganado el grande: 200 fichas")
         elif self.azar >= 3 and self.azar <= 12:
             premio.play()
             time.sleep(0.5)
             rueda(2,2,2)
             user.Ganar(15)
-            print("\t\tHas ganado: 15 fichas")
+            print("\t\t\tHas ganado: 15 fichas")
         elif self.azar >= 13 and self.azar <= 23:
             premio.play()
             time.sleep(0.5)
             rueda(3,3,3)
             user.Ganar(5)
-            print("\t\tHas ganado: 5 fichas")
+            print("\t\t\tHas ganado: 5 fichas")
         else:
             perder.play()
             time.sleep(0.9)
             aleat()
-            print("\t\tNo has conseguido ninguna ficha")
-            perder.stop()    
+            print("\t\t\tNo has conseguido ninguna ficha")
+            perder.stop()
 
 class usuario:
     def __init__(self,fichas):
@@ -55,7 +56,7 @@ class usuario:
         return self.fichas
 
     def __str__(self):
-        return "\t\tEl jugador tiene {} fichas".format(self.fichas)
+        return "\t\t\tEl jugador tiene {} fichas\n".format(self.fichas)
        
 def tragaperras_empieza(jugador,traga):
     if jugador.fichas > 4: #Mientras el jugador tenga fichas pregunta
@@ -68,12 +69,12 @@ def tragaperras_empieza(jugador,traga):
     # poder sacar la cantidad de fichas del jugador a el programa que compila los juegos
 
 
-def pobre(jugador):
-    if jugador.fichas <= 0: # Si no te quedan fichas pierdes y te echan del casino
+def pobre(fichas):
+    if fichas <= 0: # Si no te quedan fichas pierdes y te echan del casino
         sin_dinero = vlc.MediaPlayer("sin-dinero.mp3")
         sin_dinero.play()
-        print("Has perdido todas tus fichas")
-        print("Te van a echar del Casino y vas a morir pobre. O puedes pagar tu deuda con el Casino usando tu cuerpo.")
+        print("\n\t\tHas perdido todas tus fichas")
+        print("\tTe van a echar del Casino y vas a morir pobre. O puedes pagar tu deuda con el Casino usando tu cuerpo.")
     
     
 def funcion_traga(fichas):
@@ -84,7 +85,6 @@ def funcion_traga(fichas):
     fondo = vlc.MediaPlayer("fondo.mp3")
     fondo.play()
     
-    pobre(jugador) # La funcion pobre comprueba si el jugador tiene la cantidad de fichas mínima para jugar.
     fichas = tragaperras_empieza(jugador,traga) # La funcion devuelve el valor de las fichas que tiene el jugador
     time.sleep(0.4)
     fondo.stop()
@@ -122,11 +122,11 @@ def menu(fichas):
                               ╚═════════════════════════════════════════╝
     """)
 
-def bienbenido():
+def bienvenido():
     print("""
-             ┬─┐┬┌─┐┌┐ ┐┬─┐┌─┐┌┐ ┐┬ ┬─┐┌─┐   ┌─┐   ┬  ┌─┐   ─┬─┌─┐┌─┐┌─┐┌─┐┌─┐┌─┐┌─┐┌─┐┌─┐┌─┐
-             ├─┤│├┤ │└┐│├─┤├┤ │└┐││ │ ││ │   ├─┤   │  ├─┤    │ ├┬┘├─┤│ ┬├─┤├─┘├┤ ├┬┘├┬┘├─┤└─┐
-             ┴─┘┴└─┘└ └┘┴─┘└─┘└ └┘┴ ┴─┘└─┘   ┴ ┴   ┴─┘┴ ┴    ┴ ┴└─┴ ┴└─┘┴ ┴┴  └─┘┴└─┴└─┴ ┴└─┘
+             ┬─┐┬┌─┐┌┐ ┐┬  ┬┌─┐┌┐ ┐┬ ┬─┐┌─┐   ┌─┐   ┬  ┌─┐   ─┬─┌─┐┌─┐┌─┐┌─┐┌─┐┌─┐┌─┐┌─┐┌─┐┌─┐
+             ├─┤│├┤ │└┐│└┐┌┘├┤ │└┐││ │ ││ │   ├─┤   │  ├─┤    │ ├┬┘├─┤│ ┬├─┤├─┘├┤ ├┬┘├┬┘├─┤└─┐
+             ┴─┘┴└─┘└ └┘ └┘ └─┘└ └┘┴ ┴─┘└─┘   ┴ ┴   ┴─┘┴ ┴    ┴ ┴└─┴ ┴└─┘┴ ┴┴  └─┘┴└─┴└─┴ ┴└─┘
 
 """)
 
@@ -139,18 +139,18 @@ def teclado(fichas):
             return tecla,fichas
 
         elif tecla == "Key.enter":
-            print("entra")
             fichas = funcion_traga(fichas)
             
         return tecla,fichas
 
 def ejecutar_traga(fichas=50,tecla=""):
-    bienbenido()
+    bienvenido()
     while tecla != "Key.esc" and fichas != 0:
         tecla,fichas = teclado(fichas)
+        pobre(fichas)
     return fichas    
 
-ejecutar_traga()
+#ejecutar_traga()
 
 
 

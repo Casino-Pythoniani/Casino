@@ -6,10 +6,10 @@ import random
 # Flata implementarla en el tragaperras como un modulo.
 
 def rueda(pri,seg,ter): # Requerimos de 3 valores para sacar las imagenes.
-    print("\t ╔" + "═"*11 + "╗\t ╔" + "═"*11 + "╗\t ╔" + "═"*11 + "╗") # primera linea
+    print("\t\t\t ╔" + "═"*11 + "╗\t ╔" + "═"*11 + "╗\t ╔" + "═"*11 + "╗") # primera linea
     for x in range(6): # Bucle for para sacar la imagen entera
-        print("\t",dicc[pri][x],"\t",dicc[seg][x],"\t",dicc[ter][x]) 
-    print("\t ╚" + "═"*11 + "╝\t ╚" + "═"*11 + "╝\t ╚" + "═"*11 + "╝") # ultima linea
+        print("\t\t\t",dicc[pri][x],"\t",dicc[seg][x],"\t",dicc[ter][x]) 
+    print("\t\t\t ╚" + "═"*11 + "╝\t ╚" + "═"*11 + "╝\t ╚" + "═"*11 + "╝") # ultima linea
 
 # El bucle usa los numeros para imprimir la variable del diccionario.
 # Ejemplo: diccionario con clave[1] y valor numerico[0] imprime la variable (0) de la clave (1)
