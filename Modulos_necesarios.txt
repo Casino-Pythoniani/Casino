@@ -1,0 +1,12 @@
+#Para instalar los modulos use el siguiente comando
+#pip install -r Modulos_necesarios.txt
+
+#Colores para el juego
+colorama
+
+#Musica y sonido
+playsound
+python-vlc
+
+#Para usar el teclado
+pynput
