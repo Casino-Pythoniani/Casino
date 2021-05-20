@@ -749,7 +749,8 @@ def ejecutar_ruleta():
     ficha.play()
     print(ciclos_ok)
     print(ciclos)
-    sleep(4)    
+    sleep(4)
+    return dinero
 
 
         
