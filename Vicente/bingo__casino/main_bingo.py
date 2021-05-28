@@ -1,15 +1,16 @@
-from bingo_modules import *
-from bingo_ascii import *
+from Vicente.bingo__casino.bingo_modules import *
+from Vicente.bingo__casino.bingo_ascii import *
 from time import sleep
 from random import randrange
 import os
 clear = lambda: os.system('cls') 
 bucle_menu = True
 num_cartones = 3
-fichas = 500
+#fichas = 500
+global fichas
 
-def ejecutar_bingo():
-    global fichas
+def ejecutar_bingo(fichas):
+    
     while True:
         if fichas <= 0:
             break
@@ -261,6 +262,7 @@ def ejecutar_bingo():
                     premio_bingo_cpu()
                     contador_bingo += 1
                     sleep(3)
-                    break  
+                    break
+    return fichas
 
-ejecutar_bingo()      
+#ejecutar_bingo()      

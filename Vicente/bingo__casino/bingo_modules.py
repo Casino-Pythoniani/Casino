@@ -1,7 +1,7 @@
 # 27 HUECOS
 from random import randrange
 from time import sleep
-from bingo_ascii import titulo_menu_bingo,boton_jugar
+from Vicente.bingo__casino.bingo_ascii import titulo_menu_bingo,boton_jugar
 from pynput.keyboard import Listener
 import os
 clear = lambda: os.system('cls') 

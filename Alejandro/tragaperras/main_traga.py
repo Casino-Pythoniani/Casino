@@ -1,7 +1,7 @@
 
 # Programa creado por Alejandro Ruiz de la Asunción
 import random,time,vlc,playsound
-from Tragaperras.rueda_traga import *
+from Alejandro.tragaperras.rueda_traga import *
 from pynput.keyboard import Listener
 
 class juego:
