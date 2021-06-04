@@ -1,4 +1,5 @@
 import os
+
 from Menu.casino_pythoniani_ascii import *
 clear = lambda: os.system('cls') 
 from pynput.keyboard import Listener
@@ -51,7 +52,7 @@ def key_recorder(key):
 
     l.stop()
 
-def display_menu_casino(): ##ascii:│ ┼ ─ ┬ ┴ ┘ └ ├ ┤ ┌ ┐  ║ ╔ ═ ╗ ╚ ╝ ╞  ▤
+def display_menu_casino(fichas): ##ascii:│ ┼ ─ ┬ ┴ ┘ └ ├ ┤ ┌ ┐  ║ ╔ ═ ╗ ╚ ╝ ╞  ▤
     clear()
     global posx
     global posy
@@ -108,7 +109,7 @@ def display_menu_casino(): ##ascii:│ ┼ ─ ┬ ┴ ┘ └ ├ ┤ ┌ ┐  
                 '█ │            ││            │ █','█ │ 1 2 3 4 5  ││  6 7 8 9   │ █','█ │            ││            │ █',
                 '█ └────────────┴┴────────────┘ █','■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■']
 
-    titulo_casino_pythoniani()
+    titulo_casino_pythoniani(fichas)
     #PARTE DE ARRIBA
     if posx == 0 and posy == 0:
         for i in range(8):
@@ -176,9 +177,9 @@ def display_menu_casino(): ##ascii:│ ┼ ─ ┬ ┴ ┘ └ ├ ┤ ┌ ┐  
         titulo_baccarat()
         
 
-def ejecutar_menu_casino():
+def ejecutar_menu_casino(fichas):
     global l
-    display_menu_casino()
+    display_menu_casino(fichas)
     with Listener(on_press=key_recorder) as l:
         l.join()
     return juego,tecla

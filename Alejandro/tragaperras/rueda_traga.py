@@ -40,9 +40,9 @@ otro=["║ "+"╗"+" "*7+"╔"+" ║","║ "+"╚═╗"+" "*3+"╔═╝"+" ║
 dicc={1:diamante,2:fresa,3:otro}
 
 
-##rueda(1,2,3)
-##aleat()
-#playsound(musica.mp3) #Importa el módulo playsound usando el fichero musica.mp3
+rueda(1,2,3)
+aleat()
+# playsound(musica.mp3) #Importa el módulo playsound usando el fichero musica.mp3
 
 
 

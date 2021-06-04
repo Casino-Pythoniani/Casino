@@ -1,3 +1,4 @@
+
 from time import sleep
 import os
 from pynput.keyboard import Listener
@@ -8,6 +9,9 @@ from Ruleta_Europea.ganar import *
 from Ruleta_Europea.perder import *
 import playsound
 import vlc
+
+
+
 
 clear = lambda: os.system('cls')
 
@@ -691,6 +695,18 @@ def ejecutar_ruleta(fichas_m):
             sleep(4)
 
         
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     #Bucle para poder jugar

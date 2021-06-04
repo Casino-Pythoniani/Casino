@@ -1,8 +1,0 @@
-Actualizar
-py -m pip install -U pip
-
-Instalar
-py -m pip install pynput
-
-
-nombres_teclado= 

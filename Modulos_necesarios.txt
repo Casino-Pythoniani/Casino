@@ -2,11 +2,14 @@
 #pip install -r Modulos_necesarios.txt
 
 #Colores para el juego
-colorama
+pip install colorama
 
 #Musica y sonido
-playsound
-python-vlc
+pip install playsound
+pip install python-vlc
 
 #Para usar el teclado
-pynput
+pip install pynput
+
+
+

@@ -2,6 +2,7 @@
 
 #X X X X X X X X X X X X X X X X X  MODULOS_PERSONALES_BJ X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X
 
+# from _typeshed import FileDescriptor
 from playsound import playsound
 moneda = 'Coin_1.mp3'
 monedas = 'Coins_Drop.mp3'
@@ -103,25 +104,25 @@ class displays:
         
             if self._key2 == 'Key.right' :      # Si pulsas derecha ...
 
-                playsound(click)
+                playsound(click,False)
                 lista[self._posx][self._posy],lista[self._posx][self._posy+1] = lista[self._posx][self._posy+1],lista[self._posx][self._posy]
                 self._posy = self._posy + 1
 
             elif self._key2 =='Key.left' :      # Si pulsas izquierda ...
 
-                playsound(click)
+                playsound(click,False)
                 lista[self._posx][self._posy],lista[self._posx][self._posy-1] = lista[self._posx][self._posy-1],lista[self._posx][self._posy]                                             
                 self._posy = self._posy - 1
             
             elif self._key2 =='Key.down' :      # Si pulsas abajo ...
 
-                playsound(click)
+                playsound(click,False)
                 lista[self._posx][self._posy],lista[self._posx+1][self._posy] = lista[self._posx+1][self._posy],lista[self._posx][self._posy]
                 self._posx = self._posx + 1
             
             elif self._key2 =='Key.up' :        # Si pulsas arriba ...
 
-                playsound(click)
+                playsound(click,False)
                 lista[self._posx][self._posy],lista[self._posx-1][self._posy] = lista[self._posx-1][self._posy],lista[self._posx][self._posy]
                 self._posx = self._posx - 1
             
@@ -132,37 +133,37 @@ class displays:
             
                     if lista [0][0] == ' ◄ ': 
 
-                        playsound(moneda)
+                        playsound(moneda,False)
                         self._fichas -= 5           
                         self._apuesta += 5 
 
                     elif lista [1][0] == ' ◄ ': 
 
-                        playsound(moneda)
+                        playsound(moneda,False)
                         self._fichas -= 25           
                         self._apuesta += 25
                     
                     elif lista [2][0] == ' ◄ ':
 
-                        playsound(monedas)
+                        playsound(monedas,False)
                         self._fichas += self._apuesta
                         self._apuesta = 0
                     
                     elif lista [0][1] == ' ◄ ':  
 
-                        playsound(moneda)                                                                                 
+                        playsound(moneda,False)                                                                                 
                         self._fichas -= 10
                         self._apuesta += 10
                     
                     elif lista [1][1] == ' ◄ ':
                         
-                        playsound(moneda)
+                        playsound(moneda,False)
                         self._fichas -= 100
                         self._apuesta += 100
                     
                     elif lista [2][1] == ' ◄ ':
                         
-                        playsound(moneda)
+                        playsound(moneda,False)
                         if self._apuesta >= 5:
                             self._fin_apuesta = "V" 
                             self._posx,self._posy = 0,0
@@ -553,7 +554,7 @@ class displays:
             ♠                                                                                                             ♠
             ♥                                                                                                             ♥ 
             ♦                                    ╔═══════════╗       ╔════════════╗                                       ♦
-            ♣                                    ║ valor = 1 ║  '''+self._lista_as [0][0]+'''  ║ valor = 11 ║  '''+self._lista_as [0][1]+'''                                 ♣              
+            ♣                                    ║ valor = 1 ║  '''+self._lista_as [0][0]+'''  ║ valor = 11 ║  '''+self._lista_as [0][1]+'''                                  ♣              
             ♠                                    ╚═══════════╝       ╚════════════╝                                       ♠
             ♥                                                                                                             ♥
             ♦                                                                                                             ♦

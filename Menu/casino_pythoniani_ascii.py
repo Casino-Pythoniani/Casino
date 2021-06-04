@@ -1,4 +1,6 @@
-def titulo_casino_pythoniani():
+
+
+def titulo_casino_pythoniani(fichas):
     print('''
                                                      ██████  █████  ███████ ██ ███    ██  ██████                 
                                                     ██      ██   ██ ██      ██ ████   ██ ██    ██                
@@ -11,6 +13,10 @@ def titulo_casino_pythoniani():
                                     ██████    ████      ██    ███████ ██    ██ ██ ██  ██ ██ ███████ ██ ██  ██ ██ 
                                     ██         ██       ██    ██   ██ ██    ██ ██  ██ ██ ██ ██   ██ ██  ██ ██ ██ 
                                     ██         ██       ██    ██   ██  ██████  ██   ████ ██ ██   ██ ██   ████ ██ 
+
+
+                                                           TIENES '''+str(fichas)+''' FICHAS PARA GASTAR
+
 ''')
 
 def titulo_ruleta():
