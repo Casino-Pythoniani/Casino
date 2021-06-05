@@ -1,6 +1,8 @@
 # Could not find module 'C:\Users\juanc\Desktop\GIT\Casino\libvlc.dll' (or one of its dependencies). Try using the full path with constructor syntax.
 
 from time import sleep
+
+from pynput.keyboard import Listener
 from Menu.casino_pythoniani_modules import *
 
 bingo = "X"
@@ -15,9 +17,6 @@ poker ="X"
 
 #from Juanca.Tycoon.clases_tycoon import *
 
-
-
-   
 fichas = 300
 
 tecla= ""
@@ -63,11 +62,11 @@ while tecla != "Key.esc" and fichas > 0:
     elif juego == "blackjack":
 
         try :
-            
+        
             if bj == "X":
                 from Juanca.BJ.Black_Jack import *
                 bj = "V"
-                
+        
             fichas = ejecutar_BJ(fichas)
 
         except Exception as e:

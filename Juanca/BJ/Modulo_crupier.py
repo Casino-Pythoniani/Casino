@@ -4,9 +4,11 @@
 
 from random import randrange  # QUITAR si no es necesario aqui
 from playsound import playsound
-pierdes = 'fatality.mp3'
-ganas = 'ganas.mp3'
-empate = 'c_exit.mp3'
+
+pierdes = 'Juanca\BJ\pierdes.mp3'
+
+ganas = 'Juanca\BJ\ganas.mp3'
+empate = 'Juanca\BJ\c_exit.mp3'
 # O O O O O O O O O O O O O O O O O O   CLASS CRUPIER    O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O 
 
 '''  Modulo_crupier.py

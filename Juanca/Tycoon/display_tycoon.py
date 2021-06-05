@@ -9,7 +9,7 @@ from clases_tycoon import *
 from pynput.keyboard import Listener
 from playsound import playsound
 from time import sleep
-
+import os
 k = kasino()
 o = objetos()
 
@@ -23,7 +23,7 @@ yuju = "homer.mp3"
 aleluya = "aleluya.mp3"
 pop="pop.mp3"
 here="here.mp3"
-
+clear = lambda: os.system('cls')
 """ O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O"""
 
 """    CLASE DISPLAY TYCOON                                                                                                                                                  CLASE DISPLAY TYCOON    """ 
@@ -94,7 +94,8 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
     """ O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O         KEY ACTIONS    """ 
 
     def key_actions (self,lista,x): 
-
+        print (type(self._key2))
+        sleep (2) # ----------------------------------------------------------------------------------------------------------------------------------------------------------------
         """ Este metodo cogera la tecla pulsada y realizara distintas acciones dependiendo de donde la pulsemos, segun en que lista y en que parte,recibira 2 parametros , la lista por la que nos desplazaremos 
         y x que representara el menu en el que estamos ya que pulsar algo en la casilla [0][0] cambia dependiendo de donde estemos
         Metodo largo, hasta 340 mas o menos """
@@ -102,6 +103,7 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
         try:
              
             if self._key2 == 'Key.right' :      # Si pulsas derecha ...
+              
 
                 playsound(click,False)
 
@@ -412,11 +414,13 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
 
 
     def game_options (self):
+
         self.reset()
+
         def key_recorder(key):              
-         
             self._key2 = str(key)
             l.stop( )
+            return self._key2
         
         self.respuesta_opciones = "X"
         self.continuar = "X"
@@ -427,8 +431,7 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
             self.display_game_options()
 
             with Listener(on_press=key_recorder) as l: 
-                l.join( )
-                
+                l.join( )   
             self.key_actions (self.lista_options,2) 
             clear ()
         
@@ -494,7 +497,7 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
         def key_recorder(key):              
          
             self._key2 = str(key)
-            l.stop( )
+            l.join( )
         
         self.respuesta_q_compra = "salir"
         self.continuar = "X"
@@ -555,7 +558,7 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
         
         
     def maquinas (self):
-        
+       
         def key_recorder(key):              
          
             self._key2 = str(key)
@@ -1118,6 +1121,10 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
 
     """ O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O"""
 
+    """ Metodos en grupo, display_configuracion muestra la parte grafica e integra la lista para desplazarnos por el menu , configuration() es el metodo principal y gestiona
+        la funcion integrada key_recorder() que captura la tecla pulsada y mediante key_actions() realiza las acciones correspondientes,depende de lo que se elija se obtendra un resultado 
+        que en esta ocasion se enviara a main para que este realice acciones en consecuencia"""
+ 
 
     def display_configuracion (self): 
         

@@ -18,7 +18,6 @@ from time import sleep
 
 
 
-
 def ejecutar_BJ (x):
     
     fichas = x

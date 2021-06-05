@@ -4,14 +4,14 @@
 
 # from _typeshed import FileDescriptor
 from playsound import playsound
-moneda = 'Coin_1.mp3'
-monedas = 'Coins_Drop.mp3'
-click = 'click.mp3'
-reparto = 'c_reparto.mp3'
-plantar = 'c_plantar.mp3'
-fuera = 'continue.mp3'
-out = 'c_exit.mp3'
-vida = 'c_round2.mp3'
+moneda = 'Juanca\BJ\Coin_1.mp3'
+monedas = 'Juanca\BJ\Coins_Drop.mp3'
+click = 'Juanca\BJ\click.mp3'
+reparto = 'Juanca\BJ\c_reparto.mp3'
+plantar = 'Juanca\BJ\c_plantar.mp3'
+fuera = 'Juanca\BJ\continue.mp3'
+out = 'Juanca\BJ\c_exit.mp3'
+vida = 'Juanca\BJ\c_round2.mp3'
 
 
 

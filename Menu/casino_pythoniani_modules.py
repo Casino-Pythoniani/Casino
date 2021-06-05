@@ -1,5 +1,5 @@
 import os
-
+from playsound import playsound
 from Menu.casino_pythoniani_ascii import *
 clear = lambda: os.system('cls') 
 from pynput.keyboard import Listener
@@ -7,6 +7,8 @@ from pynput.keyboard import Listener
 posx = 0
 posy = 0
 tecla = ""
+clik ="Juanca\BJ\click.mp3"
+ent = "Juanca\BJ\Coins_Drop.mp3"
 
 def key_recorder(key):
     global posx
@@ -18,18 +20,23 @@ def key_recorder(key):
     key = str(key).replace("'", "")
 
     if key == 'Key.right' and posx != 3:
+        playsound(clik,False)
         posx += 1
 
     elif key == 'Key.left' and posx != 0:
+        playsound(clik,False)
         posx -= 1
     
     elif key == 'Key.down' and posy != 1:
+        playsound(clik,False)
         posy += 1
 
     elif key == 'Key.up' and posy != 0:
+        playsound(clik,False)
         posy -= 1
     
     elif key == 'Key.enter':
+        playsound(ent,False)
         if posx == 0 and posy == 0:
             juego = 'ruleta'
         elif posx == 1 and posy == 0:
