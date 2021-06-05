@@ -65,7 +65,7 @@ while tecla != "Key.esc" and fichas > 0:
         try :
             
             if bj == "X":
-                from Juanca.Bj.Black_Jack import *
+                from Juanca.BJ.Black_Jack import *
                 bj = "V"
                 
             fichas = ejecutar_BJ(fichas)
