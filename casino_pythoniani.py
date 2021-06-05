@@ -1,4 +1,4 @@
-
+# Could not find module 'C:\Users\juanc\Desktop\GIT\Casino\libvlc.dll' (or one of its dependencies). Try using the full path with constructor syntax.
 
 from time import sleep
 from Menu.casino_pythoniani_modules import *

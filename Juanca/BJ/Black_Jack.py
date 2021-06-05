@@ -5,12 +5,12 @@
         De este modulo importamos también la función compara_puntos() que sirve para determinar quien gana según la pntuación y gestionar las fichas según apuesta y resultado de la partida.
     Importamos displays , esta es la clase principal y contiene los displays de todas las elecciones del juego asi como los actos que conllevan estas elecciones, creamos con esta clase el objeto display   '''
 
-
-from .Modulo_crupier import Crupier
-from .Modulo_crupier import compara_puntos
-from .Modulo_crupier import titulo_mano
+from pynput.keyboard import Listener
+from Juanca.BJ.Modulo_crupier import Crupier
+from Juanca.BJ.Modulo_crupier import compara_puntos
+from Juanca.BJ.Modulo_crupier import titulo_mano
 from playsound import playsound
-from .Modulo_display import displays
+from Juanca.BJ.Modulo_display import displays
 
 import os
 clear = lambda: os.system('cls')
