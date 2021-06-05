@@ -8,11 +8,12 @@ clear = lambda: os.system('cls')
 from time import sleep
 from pynput.keyboard import Listener
 """ Importamos todo de estos dos modulos , son propios y se encuentran en estos las clases necesarias para el funcionamiento del programa """
-from clases_tycoon import *
-from display_tycoon import *
 
-ambiente = "casino.mp3"
-yuju = "homer.mp3"
+from Juanca.Tycoon.clases_tycoon import *
+from Juanca.Tycoon.display_tycoon import *
+
+ambiente = "Juanca\Tycoon\casino.mp3"
+yuju = "Juanca\Tycoon\homer.mp3"
 
 """ O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O """
 
@@ -27,71 +28,73 @@ clear()
 
 
 
-casino = kasino()
-casino.crear_mapa()
+def ejecutar_tycoon ():
 
-display = display_tycoon ()
+    casino = kasino()
+    casino.crear_mapa()
 
-
-continuar = "V"
-
-
-while continuar == "V":
-
-    # playsound(ambiente,False)
-
-    clear()
-    resultado_game_options = display.game_options()
-
-    if resultado_game_options == "continue":
-
-        display.siguiente()
-
-    elif resultado_game_options == "estado":
-
-        mostrando = display.opciones_estado()
-
-    elif resultado_game_options == "comprar":
-
-        proveedor = display.opciones_compra ( )
-
-        if proveedor == "maquinas":
-
-            display.maquinas ()
-                 
-        elif proveedor == "deco":
-            
-            display.decoration()
-            
-        elif proveedor == "salir":
-            pass
+    display = display_tycoon ()
 
 
-    elif resultado_game_options == "config":
-  
-            config = display.configuration()
-           
-            if config == "guardar":
+    continuar = "V"
+
+
+    while continuar == "V":
+
+        # playsound(ambiente,False)
+
+        clear()
+        resultado_game_options = display.game_options()
+
+        if resultado_game_options == "continue":
+
+            display.siguiente()
+
+        elif resultado_game_options == "estado":
+
+            mostrando = display.opciones_estado()
+
+        elif resultado_game_options == "comprar":
+
+            proveedor = display.opciones_compra ( )
+
+            if proveedor == "maquinas":
+
+                display.maquinas ()
+                    
+            elif proveedor == "deco":
                 
-                k.titulo_informe()
-                casino.guardar_mapa(kasino.mapa)
-                casino.guardar_otras(kasino.maquinas,kasino.decoracion,kasino.dia,kasino.dinero)
-                print("\n"*3,"\t"*5,"TU PARTIDA HA SIDO GUARDADA")
-                playsound(yuju)
-                sleep(1)
-                clear()
+                display.decoration()
+                
+            elif proveedor == "salir":
+                pass
 
-            elif config == "cargar":
-                k.titulo_informe()
-                kasino.mapa=casino.cargar_mapa()
-                casino.cargar_otras()
-                print("\n"*3,"\t"*5,"TU PARTIDA HA SIDO CARDADA")
-                playsound(yuju)
-                sleep(1)
-                clear ()
 
-            elif config == "exit":
-                break
+        elif resultado_game_options == "config":
+    
+                config = display.configuration()
+            
+                if config == "guardar":
+                    
+                    k.titulo_informe()
+                    casino.guardar_mapa(kasino.mapa)
+                    casino.guardar_otras(kasino.maquinas,kasino.decoracion,kasino.dia,kasino.dinero)
+                    print("\n"*3,"\t"*5,"TU PARTIDA HA SIDO GUARDADA")
+                    playsound(yuju)
+                    sleep(1)
+                    clear()
 
-          
+                elif config == "cargar":
+                    k.titulo_informe()
+                    kasino.mapa=casino.cargar_mapa()
+                    casino.cargar_otras()
+                    print("\n"*3,"\t"*5,"TU PARTIDA HA SIDO CARDADA")
+                    playsound(yuju)
+                    sleep(1)
+                    clear ()
+
+                elif config == "exit":
+                    break
+
+            
     

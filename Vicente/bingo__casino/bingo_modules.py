@@ -1,11 +1,14 @@
 # 27 HUECOS
+from playsound import playsound
 from random import randrange
 from time import sleep
 from Vicente.bingo__casino.bingo_ascii import titulo_menu_bingo,boton_jugar
 from pynput.keyboard import Listener
 import os
 clear = lambda: os.system('cls') 
-
+clik="Juanca\BJ\click.mp3"
+b="Vicente\misc133.mp3"
+a="Juanca\Tycoon\dios.mp3"
 def crear_carton():
     carton = [['','','','','','','','',''],
               ['','','','','','','','',''],
@@ -184,6 +187,7 @@ def key_recorder(key):
     key = str(key).replace("'", "")
 
     if key == 'Key.right' and posx != 2:
+        playsound(clik,False)
         lis[posx+1] = ' BUY '
         lis[posx] = '     '
         posx += 1
@@ -191,6 +195,7 @@ def key_recorder(key):
             posx = 2
         
     elif key == 'Key.left' and posx != 0:
+        playsound(clik,False)
         lis[posx-1] = ' BUY '
         lis[posx] = '     '
         posx -= 1
@@ -198,9 +203,11 @@ def key_recorder(key):
             posx = 0
 
     elif key == 'Key.enter':
+        playsound(b,False)
         romper_bucle = 1
     
     elif key == 'Key.esc':
+        playsound(a,False)
         romper_bucle = 1
         salir = 1
         

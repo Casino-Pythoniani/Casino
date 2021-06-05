@@ -1,11 +1,12 @@
 from time import sleep 
 import random
 import os
+from playsound import playsound
 from pynput.keyboard import Listener
 # from dibujo_caballos import *
 clear = lambda: os.system('cls')    ##Función para borrar la consola
-
-
+click = 'Juanca\Tycoon\click.mp3'
+carr = "Vicente\caballos_casino\prueba1.mp3"
 def ejecutar_caballos(x):
 
     
@@ -194,18 +195,21 @@ def ejecutar_caballos(x):
         key = str(key).replace("'", "")
         
         if key == 'Key.down' and pos_cab != 6:
+            playsound(click,False)
             lista_menu_apostar[pos_cab],lista_menu_apostar[pos_cab+1] = lista_menu_apostar[pos_cab+1],lista_menu_apostar[pos_cab]
             pos_cab += 1
             if pos_cab >= 6:
                 pos_cab = 6
                 
         elif key == 'Key.up' and pos_cab != 0:
+            playsound(click,False)
             lista_menu_apostar[pos_cab],lista_menu_apostar[pos_cab-1] = lista_menu_apostar[pos_cab-1],lista_menu_apostar[pos_cab]
             pos_cab -= 1
             if pos_cab <= 0:
                 pos_cab = 0
                 
         elif key == 'Key.right':
+            playsound(click,False)
             if '◄══' == lista_menu_apostar[0]:
                 apuesta_caballo1 += 5
                 fichas -= 5
@@ -255,6 +259,7 @@ def ejecutar_caballos(x):
                     fichas += 5
 
         elif key == 'Key.left':
+            playsound(click,False)
             if '◄══' == lista_menu_apostar[0]:
                 apuesta_caballo1 -= 5
                 fichas += 5
@@ -392,6 +397,7 @@ def ejecutar_caballos(x):
                 l.join()
                 
         print('\n'*42)
+        playsound(carr,False)
         while True:
             movimiento_todos_caballos()
             print(("\033[F") * 43)

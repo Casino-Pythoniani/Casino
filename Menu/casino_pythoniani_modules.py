@@ -11,6 +11,7 @@ clik ="Juanca\BJ\click.mp3"
 ent = "Juanca\BJ\Coins_Drop.mp3"
 
 def key_recorder(key):
+    
     global posx
     global posy
     global juego
@@ -18,7 +19,7 @@ def key_recorder(key):
     juego = ""
 
     key = str(key).replace("'", "")
-
+    
     if key == 'Key.right' and posx != 3:
         playsound(clik,False)
         posx += 1
@@ -56,6 +57,9 @@ def key_recorder(key):
 
     elif key == "Key.esc":
         tecla = key
+
+    elif key == "Key.space":
+        juego = "tycoon"
 
     l.stop()
 
@@ -117,6 +121,7 @@ def display_menu_casino(fichas): ##ascii:│ ┼ ─ ┬ ┴ ┘ └ ├ ┤ ┌
                 '█ └────────────┴┴────────────┘ █','■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■']
 
     titulo_casino_pythoniani(fichas)
+    print ("\t"*4,"►  ㋡  ㋡  SI TIENES VERSION PREMIUM PULSA ESPACIO PARA ACCEDER AL CASINO TYCOON   ㋡   ㋡  ◄\n\n")
     #PARTE DE ARRIBA
     if posx == 0 and posy == 0:
         for i in range(8):
@@ -182,6 +187,8 @@ def display_menu_casino(fichas): ##ascii:│ ┼ ─ ┬ ┴ ┘ └ ├ ┤ ┌
         for i in range(8):
             print(blackjack[i],' '*6,traga[i],' '*6,poker[i],' '*6,baccarat_s[i])
         titulo_baccarat()
+
+    print ("\t"*4,"►  ㋡  ㋡  SI TIENES VERSION PREMIUM PULSA ESPACIO PARA ACCEDER AL CASINO TYCOON   ㋡   ㋡  ◄\n\n")
         
 
 def ejecutar_menu_casino(fichas):

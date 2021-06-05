@@ -263,6 +263,7 @@ def ejecutar_bingo(fichas):
                     contador_bingo += 1
                     sleep(3)
                     break
+                
     return fichas
 
 #ejecutar_bingo()      

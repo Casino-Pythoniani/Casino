@@ -1,9 +1,14 @@
-
+from playsound import playsound  
 import os
 from pynput.keyboard import Listener
 from random import randrange
 from time import sleep
 clear = lambda: os.system('cls') 
+
+d1 = "Lucas\oll-dice-2.mp3"
+a= "Juanca\Tycoon\dios.mp3"
+click = "Juanca\Tycoon\click.mp3"
+m = "Lucas\Coin_1.mp3"
 #Clase que tiene todas las caracterisiticas del juego
 class craps:
 
@@ -239,27 +244,35 @@ class craps:
         if self.fichas>0 and self.apuestas<10000:
             if self.apu==False:
                 if self.key=='q':
+                    playsound(m,False)
                     self.apuestas+=1
                     self.fichas-=1
                 if self.key=='w':
+                    playsound(m,False)
                     self.apuestas+=5
                     self.fichas-=5
                 if self.key=='e':
+                    playsound(m,False)
                     self.apuestas+=25
                     self.fichas-=25
                 if self.key=='r':
+                    playsound(m,False)
                     self.apuestas+=100
                     self.fichas-=100
             if self.apuestas>0 and self.key=="Key.enter":
+                playsound(d1,False)
                 self.tirar_dado()
+               
             if self.posx>3:
                 self.posx=3
             if self.posx<1:
                 self.posx=0
             if self.key=='Key.right' and self.comp==True:
+                playsound(click,False)
                 self.posx+=1
                 self.apu=False
             if self.key=='Key.left' and self.comp==True:
+                playsound(click,False)
                 self.posx-=1
                 self.apu=False
             if self.posx==1:
@@ -306,6 +319,7 @@ def ejecutar_dados(fichas):
         with Listener(on_press=juego.key_recorder) as l:
             l.join()
         clear()
+    playsound(a,False)
     return juego.fichas
 
 

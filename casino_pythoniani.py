@@ -13,9 +13,9 @@ baccarat = "X"
 ruleta= "X"
 caballos = "X"
 poker ="X"
+tycoon = "X"
 
 
-#from Juanca.Tycoon.clases_tycoon import *
 
 fichas = 300
 
@@ -165,11 +165,23 @@ while tecla != "Key.esc" and fichas > 0:
             print (e)
             sleep(3)
 
+#   X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X     TYCOON   X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X 
 
 
 
+    elif juego == "tycoon":
 
-    
+        # try:
+        if tycoon == "X":
+            from Juanca.Tycoon.tycoon import *
+            tycoon = "V"
+
+        ejecutar_tycoon()
+
+        # except Exception as e:
+        #     print ("Algo ha salido mal durante la ejecucion del casino tycoon\n")
+        #     print (e)
+        #     sleep(3)
     
         
 

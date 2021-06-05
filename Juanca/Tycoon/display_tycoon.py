@@ -5,7 +5,7 @@ IMPORTAMOS: Playsound para reproducir sonidos y sleep para producir -pausas- con
  Creamos los objetos K y O para disponer facilmente de algunas variables estaticas .  """
 
 from random import randrange
-from clases_tycoon import *
+from Juanca.Tycoon.clases_tycoon import *
 from pynput.keyboard import Listener
 from playsound import playsound
 from time import sleep
@@ -13,16 +13,15 @@ import os
 k = kasino()
 o = objetos()
 
-click = 'click.mp3'
-click2="bambu.mp3"
-donkey= "donkey.mp3"
-cancelar = "fallo.mp3"
-aceptar="bros vida.mp3"
-adios= "adios.mp3"
-yuju = "homer.mp3"
-aleluya = "aleluya.mp3"
-pop="pop.mp3"
-here="here.mp3"
+click = 'Juanca\Tycoon\click.mp3'
+click2="Juanca\Tycoon\mbu.mp3"
+donkey= "Juanca\Tycoon\donkey.mp3"
+cancelar = "Juanca\Tycoon\llo.mp3"
+adios= "Juanca\Tycoon\dios.mp3"
+yuju = "Juanca\Tycoon\homer.mp3"
+aleluya = "Juanca\Tycoon\leluya.mp3"
+pop="Juanca\Tycoon\pop.mp3"
+here="Juanca\Tycoon\here.mp3"
 clear = lambda: os.system('cls')
 """ O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O"""
 
@@ -94,8 +93,7 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
     """ O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O         KEY ACTIONS    """ 
 
     def key_actions (self,lista,x): 
-        print (type(self._key2))
-        sleep (2) # ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
         """ Este metodo cogera la tecla pulsada y realizara distintas acciones dependiendo de donde la pulsemos, segun en que lista y en que parte,recibira 2 parametros , la lista por la que nos desplazaremos 
         y x que representara el menu en el que estamos ya que pulsar algo en la casilla [0][0] cambia dependiendo de donde estemos
         Metodo largo, hasta 340 mas o menos """
@@ -103,8 +101,6 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
         try:
              
             if self._key2 == 'Key.right' :      # Si pulsas derecha ...
-              
-
                 playsound(click,False)
 
                 if x == 5 and self._posy == len(lista[1])-2:
@@ -420,7 +416,7 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
         def key_recorder(key):              
             self._key2 = str(key)
             l.stop( )
-            return self._key2
+          
         
         self.respuesta_opciones = "X"
         self.continuar = "X"
@@ -497,7 +493,8 @@ correspondientemente segun la posicion en la que estemos y la tecla pulsada  """
         def key_recorder(key):              
          
             self._key2 = str(key)
-            l.join( )
+            l.stop( )
+          
         
         self.respuesta_q_compra = "salir"
         self.continuar = "X"
