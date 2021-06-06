@@ -150,7 +150,7 @@ def ejecutar_traga(fichas=50,tecla=""):
         pobre(fichas)
     return fichas    
 
-ejecutar_traga()
+##ejecutar_traga()
 
 
 
