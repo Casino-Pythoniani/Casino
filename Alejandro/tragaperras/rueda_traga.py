@@ -3,7 +3,6 @@ import random
 #from playsound import playsound
 
 # Las intrucciones para imprimir las imagenes del tragaperras.
-# Flata implementarla en el tragaperras como un modulo.
 
 def rueda(pri,seg,ter): # Requerimos de 3 valores para sacar las imagenes.
     print("\t\t\t ╔" + "═"*11 + "╗\t ╔" + "═"*11 + "╗\t ╔" + "═"*11 + "╗") # primera linea
@@ -25,7 +24,7 @@ def aleat(): # Una función para mostrar aleatoriamente las imagenes que te da e
         if seg not in dicc: # Si el valor de la segunda imagen no esta asociado a ninguna clave del diccionario hace esta acción.
             seg -= 2 # Le resta 2 al valor de la segunda imagen, para que sea diferente del resto.
     rueda(pri,seg,ter) # Llama a la función que muestra las imagenes.
-    return
+##    return
 
 
 # Lista para mostrar un diamante
@@ -40,8 +39,8 @@ otro=["║ "+"╗"+" "*7+"╔"+" ║","║ "+"╚═╗"+" "*3+"╔═╝"+" ║
 dicc={1:diamante,2:fresa,3:otro}
 
 
-rueda(1,2,3)
-aleat()
+##rueda(1,2,3)
+##aleat()
 # playsound(musica.mp3) #Importa el módulo playsound usando el fichero musica.mp3
 
 
