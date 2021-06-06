@@ -6,9 +6,10 @@ from pynput.keyboard import Listener
 
 
 def baccarat(fichas):
-    play = True
+    
     
     class Player:
+        play = "True"
         def __init__(self,  puntosTotales, nombre = "", fichas = 0, apuesta = 0, accion = 0, posicion = ""):
             self.puntoTotales = puntosTotales
             self.nombre = nombre
@@ -20,7 +21,6 @@ def baccarat(fichas):
         def acciones(self):
 
             def key_recorder(key):
-                global play
 
                 if self.accion == 0:  #----------accion "0" indica la intro donde se elige si jugar o salir
                     Dibujo.clear()
@@ -50,9 +50,9 @@ def baccarat(fichas):
                         print('\n\n\t\t\t\t\t\t',end="")
                         Dibujo.effect("%s%sAdios {}! Vuelva pronto!%s".format(self.nombre) % (fg('sky_blue_2'), attr('bold'),attr('reset')), .1)
                         print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
-                        play = False
+                        jugador.play = "False"
                         l.stop()
-                        return False
+                   
 
                 if self.accion == 1:  #accion "1" indica donde se elige la posición donde jugar entre "jugador" o "banco"
                     Dibujo.clear()
@@ -484,7 +484,7 @@ def baccarat(fichas):
     computer = Player(0,"Computer")
     
     #---- programa
-    while play:
+    while jugador.play == "True":
         jugador.acciones()
         if jugador.fichas == 0 or jugador.fichas >= 5000:
             if jugador.fichas >= 5000:
@@ -494,7 +494,8 @@ def baccarat(fichas):
                 print('\n\t\t\t\t\t\t  ',end="")
                 Dibujo.effect("Adios "+nombre+"! Vuelva pronto!",.1)
                 print('\n\n\n\n\n\n\n\n\n\n\n\n')
-                play = False
+                play = "False"
+                return jugador.fichas
             else:
                 Dibujo.clear()
                 print('\n\t\t\t\t\t\t',end="")
@@ -502,8 +503,12 @@ def baccarat(fichas):
                 print('\n\t\t\t\t\t\t  ',end="")
                 Dibujo.effect("Adios "+nombre+"! Vuelva pronto!",.1)
                 print('\n\n\n\n\n\n\n\n\n\n\n\n')        
-                play = False
+                play = "False"
+                return jugador.fichas
         else:
             pass
+       
+    return jugador.fichas
+
     
-baccarat(500)
+# baccarat(500)

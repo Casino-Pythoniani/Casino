@@ -1,15 +1,17 @@
-# Could not find module 'C:\Users\juanc\Desktop\GIT\Casino\libvlc.dll' (or one of its dependencies). Try using the full path with constructor syntax.
 
-from time import sleep
-
-from pynput.keyboard import Listener
-from Menu.casino_pythoniani_modules import *
+try:
+    from time import sleep
+    from pynput.keyboard import Listener
+    from Menu.casino_pythoniani_modules import *
+except Exception as e:
+    print("\nHa habido algun fallo revisa la documentacion y mira que tengas todos los paquetes necesario\n")
+    print (e)
 
 bingo = "X"
 dados = "X"
 bj= "X"
 tragaperras = "X"
-baccarat = "X"
+baccarat_j = "X"
 ruleta= "X"
 caballos = "X"
 poker ="X"
@@ -115,11 +117,11 @@ while tecla != "Key.esc" and fichas > 0:
     elif juego == "baccarat":
 
         try:
-            if baccarat == "X":
-                from Ruben.baccarat import *
-                baccarat = "V"
+            if baccarat_j == "X":
+                from Ruben.baccarat import baccarat
+                baccarat_j = "V"
 
-            fichas = ejecutar_baccarat(fichas)
+            fichas = baccarat (fichas)
 
         except Exception as e:
             print ("Algo ha salido mal durante la ejecucion del baccarat ")
@@ -169,17 +171,17 @@ while tecla != "Key.esc" and fichas > 0:
 
     elif juego == "tycoon":
 
-        # try:
-        if tycoon == "X":
-            from Juanca.Tycoon.tycoon import *
-            tycoon = "V"
+        try:
+            if tycoon == "X":
+                from Juanca.Tycoon.tycoon import *
+                tycoon = "V"
 
-        ejecutar_tycoon()
+            ejecutar_tycoon()
 
-        # except Exception as e:
-        #     print ("Algo ha salido mal durante la ejecucion del casino tycoon\n")
-        #     print (e)
-        #     sleep(3)
+        except Exception as e:
+            print ("Algo ha salido mal durante la ejecucion del casino tycoon\n")
+            print (e)
+            sleep(3)
     
         
 
