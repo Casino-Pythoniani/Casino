@@ -24,18 +24,18 @@ def baccarat(fichas):
 
                 if self.accion == 0:  #----------accion "0" indica la intro donde se elige si jugar o salir
                     Dibujo.clear()
-                    Dibujo.disegna() 
+                    Dibujo.tablero() 
                     print("\t\t\t\t\t  " + Dibujo.color + Dibujo.lista_direccion[0] + Dibujo.Reset + "%s%s Jugar%s" % (fg('white'), attr('bold'), attr('reset')) + "\t\t\t\t" + Dibujo.color + Dibujo.lista_direccion[1] + Dibujo.Reset +"%s%s Salir%s" % (   fg('white'), attr('bold'), attr('reset')))
                     if key == key.left:
                         Dibujo.clear()
                         Dibujo.lista_direccion = ["->","  "]
-                        Dibujo.disegna()
+                        Dibujo.tablero()
                         print("\t\t\t\t\t  " + Dibujo.color + Dibujo.lista_direccion[0] + Dibujo.Reset + "%s%s Jugar%s" % (fg('red_3a'), attr('bold'), attr('reset')) + "\t\t\t\t" + Dibujo.color + Dibujo.lista_direccion[1] + Dibujo.Reset +"%s%s Salir%s" % (fg('white'), attr('bold'), attr('reset')))
                     
                     if key == key.right:
                         Dibujo.clear()
                         Dibujo.lista_direccion = ["  ","->"]
-                        Dibujo.disegna()
+                        Dibujo.tablero()
                         print("\t\t\t\t\t  " + Dibujo.color + Dibujo.lista_direccion[0] + Dibujo.Reset + "%s%s Jugar%s" % (fg('white'), attr('bold'), attr('reset')) + "\t\t\t\t" + Dibujo.color + Dibujo.lista_direccion[1] + Dibujo.Reset +"%s%s Salir%s" % (fg('red_3a'), attr('bold'), attr('reset')))
                     
                     if key == key.enter and Dibujo.lista_direccion[0] == "->":
@@ -56,21 +56,21 @@ def baccarat(fichas):
 
                 if self.accion == 1:  #accion "1" indica donde se elige la posición donde jugar entre "jugador" o "banco"
                     Dibujo.clear()
-                    Dibujo.disegna()
+                    Dibujo.tablero()
                     print("\t\t\t\t\t\t    %s%s{} elije tu posición entre:%s".format(self.nombre) % (fg('sky_blue_2'), attr('bold'), attr('reset')))
                     print("\n\n\t\t\t\t\t" + Dibujo.color + Dibujo.lista_direccion[0] + Dibujo.Reset + "%s%s  Jugador%s" % (fg('white'), attr('bold'), attr('reset')) + "\t\t\t\t" + Dibujo.color + Dibujo.lista_direccion[1] + Dibujo.Reset +"%s%s  Banco%s" % (fg('white'), attr('bold'), attr('reset')))
                     
                     if key == key.left:
                         Dibujo.clear()
                         Dibujo.lista_direccion = ["->","  "]
-                        Dibujo.disegna()
+                        Dibujo.tablero()
                         print("\t\t\t\t\t\t    %s%s{} elije tu posición entre:%s".format(self.nombre) % (fg('sky_blue_2'), attr('bold'), attr('reset')))
                         print("\n\n\t\t\t\t\t" + Dibujo.color + Dibujo.lista_direccion[0] + Dibujo.Reset + "%s%s  Jugador%s" % (fg('red_3a'), attr('bold'), attr('reset')) + "\t\t\t\t" + Dibujo.color + Dibujo.lista_direccion[1] + Dibujo.Reset +"%s%s  Banco%s" % (fg('white'), attr('bold'), attr('reset')))
                         
                     if key == key.right:
                         Dibujo.clear()
                         Dibujo.lista_direccion = ["  ","->"]
-                        Dibujo.disegna()
+                        Dibujo.tablero()
                         print("\t\t\t\t\t\t    %s%s{} elije tu posición entre:%s".format(self.nombre) % (fg('sky_blue_2'), attr('bold'), attr('reset')))
                         print("\n\n\t\t\t\t\t" + Dibujo.color + Dibujo.lista_direccion[0] + Dibujo.Reset + "%s%s  Jugador%s" % (fg('white'), attr('bold'), attr('reset')) + "\t\t\t\t" + Dibujo.color + Dibujo.lista_direccion[1] + Dibujo.Reset +"%s%s  Banco%s" % (fg('red_3a'), attr('bold'), attr('reset')))
                         
@@ -91,7 +91,7 @@ def baccarat(fichas):
                         l.stop()
                 if self.accion == 2: #----------------- accion "2" indica donde se elige la apuesta 
                     Dibujo.clear()
-                    Dibujo.disegna()
+                    Dibujo.tablero()
                     print("\t\t\t\t\t    %s%sPara subir la apuesta teclee la tecla arriba%s"% (fg('sky_blue_2'), attr('bold'),attr('reset')))
                     
                     if key == key.up:
@@ -104,7 +104,7 @@ def baccarat(fichas):
                                 Dibujo.elementMesa[36] = "       Apuesta: " + str(self.apuesta)
                                 Dibujo.elementMesa[35] = ""
                             Dibujo.clear()
-                            Dibujo.disegna()
+                            Dibujo.tablero()
                             print("\t\t\t\t\t    %s%sPara subir la apuesta teclee la tecla arriba%s"% (fg('sky_blue_2'), attr('bold'),attr('reset')))
                             print("\n\t\t\t\t\t    %s%sPara Bajar la apuesta teclee la tecla abajo%s"% (fg('sky_blue_2'), attr('bold'),attr('reset')))
                             print('\n\t\t\t\t\t     %s%sCuando su apuesta es lista teclee: "Enter" %s'% (fg('sky_blue_2'), attr('bold'),attr('reset')))
@@ -119,20 +119,20 @@ def baccarat(fichas):
                                 Dibujo.elementMesa[36] = "       Apuesta: " + str(self.apuesta)
                                 Dibujo.elementMesa[35] = ""
                             Dibujo.clear()
-                            Dibujo.disegna()
+                            Dibujo.tablero()
                             print("\t\t\t\t\t    %s%sPara subir la apuesta teclee la tecla arriba%s"% (fg('sky_blue_2'), attr('bold'),attr('reset')))
                             print("\n\t\t\t\t\t    %s%sPara Bajar la apuesta teclee la tecla abajo%s"% (fg('sky_blue_2'), attr('bold'),attr('reset')))
                             print('\n\t\t\t\t\t     %s%sCuando su apuesta es lista teclee: "Enter" %s'% (fg('sky_blue_2'), attr('bold'),attr('reset')))
                             
                     if key == key.enter and self.apuesta >= 10:
                         Dibujo.clear()
-                        Dibujo.disegna()
+                        Dibujo.tablero()
                         self.accion = 3
                         l.stop()
                 
                 if self.accion == 3: #   <---- accion "3" es donde se sacan las cartas y se juega ----|
                     Dibujo.clear()
-                    Dibujo.disegna()
+                    Dibujo.tablero()
                     turnos()
                     Dibujo.listasBasias()
                     self.accion = 0
@@ -141,14 +141,14 @@ def baccarat(fichas):
 
                 if self.accion == 4: #   <---- accion "4" es donde se elige si sacar la carta bonus cuando los puntos son muy bajos----|
                     Dibujo.clear()
-                    Dibujo.disegna()
+                    Dibujo.tablero()
                     print('\n\t\t\t\t\t\t       ',end="")
                     print("%s%sQuieres una carta más?%s" % (fg('red_3a'), attr('bold'), attr('reset')))
                     print("\n\t\t\t\t\t   " + Dibujo.color + Dibujo.lista_direccion[0] + Dibujo.Reset + "%s%s  Si%s" % (fg('white'), attr('bold'), attr('reset')) + "\t\t\t\t" + Dibujo.color + Dibujo.lista_direccion[1] + Dibujo.Reset +"%s%s  No%s" % (fg('white'), attr('bold'), attr('reset')))
                     if key == key.left:
                         Dibujo.clear()
                         Dibujo.lista_direccion = ["->","  "] 
-                        Dibujo.disegna()
+                        Dibujo.tablero()
                         print('\n\t\t\t\t\t\t       ',end="")
                         print("%s%sQuieres una carta más?%s" % (fg('red_3a'), attr('bold'), attr('reset')))
                         print("\n\t\t\t\t\t   " + Dibujo.color + Dibujo.
@@ -157,7 +157,7 @@ def baccarat(fichas):
                     if key == key.right:
                         Dibujo.clear()
                         Dibujo.lista_direccion = ["  ","->"]
-                        Dibujo.disegna()
+                        Dibujo.tablero()
                         print('\n\t\t\t\t\t\t       ',end="")
                         print("%s%sQuieres una carta más?%s" % (fg('red_3a'), attr('bold'), attr('reset')))
                         print("\n\t\t\t\t\t   " + Dibujo.color + Dibujo.lista_direccion[0] + Dibujo.Reset + "%s%s  Si%s" % (fg('white'), attr('bold'), attr('reset')) + "\t\t\t\t" + Dibujo.color + Dibujo.lista_direccion[1] + Dibujo.Reset +"%s%s  No%s" % (fg('red_3a'), attr('bold'), attr('reset')))
@@ -189,31 +189,28 @@ def baccarat(fichas):
                 pass
             return x
 
-
-
-
-            #-- Función para el turno del "jugador"
+            #-- Función que genera los turnos
         def puntos(self,a,b,c,d,e,f,g,h,i,l,m,n,o,p,q,r,s,t,u):
             
             carta_1 = Cartas.generarCarta(a,b,c,d,e)
             carta_2 = Cartas.generarCarta(f,g,h,i,l)
             time.sleep(1.5)
             Dibujo.clear()
-            Dibujo.disegna()
+            Dibujo.tablero()
             punto_1 = Player.reset(carta_1)
             punto_2 = Player.reset(carta_2)
             Dibujo.elementMesa[m] = "Puntos: "+str(punto_1)+" "+str(punto_2)
             time.sleep(1.5)
             Dibujo.clear()
-            Dibujo.disegna()
+            Dibujo.tablero()
             self.puntoTotales = punto_1 + punto_2
             self.puntoTotales = Player.reset_2(self.puntoTotales)
             Dibujo.elementMesa[n] = "Puntos totales: "+str(self.puntoTotales)
             time.sleep(1.5)
             Dibujo.clear()
-            Dibujo.disegna()
+            Dibujo.tablero()
             
-            if u == True and Player.reset_2(jugador.puntoTotales) <= 7: #-Si el usuario es en posición "jugador" y tiene meno de 8 puntos puede elegir una tercera carta.
+            if u and Player.reset_2(jugador.puntoTotales) <= 7: #-Si el usuario es en posición "jugador" y tiene meno u 7 puntos puede elegir una tercera carta.
                 print("\n\n\t\t\t\t\t\t\t    %s%sPress Enter%s" % (fg('sky_blue_2'), attr('bold'),attr('reset')))
                 jugador.accion = 4
                 Dibujo.lista_direccion = ["  ","  "] 
@@ -230,8 +227,7 @@ def baccarat(fichas):
                 else:
                     pass
             else:
-                if Player.reset_2(computer.puntoTotales) < Player.reset_2(jugador.puntoTotales):
-                    time.sleep(1)
+                if Player.reset_2(computer.puntoTotales) < Player.reset_2(jugador.puntoTotales) and not u:
                     Dibujo.elementMesa[o] = "<*| Carta bonus |*>"
                     carta_3 = Cartas.generarCarta(p,q,r,s,t)  
                     punto_3 = Player.reset(carta_3) 
@@ -240,7 +236,7 @@ def baccarat(fichas):
                     self.puntoTotales = Player.reset_2(self.puntoTotales) #-Puntos total del jugador
                     Dibujo.elementMesa[n] = "Puntos totales: "+str(self.puntoTotales)   
             Dibujo.clear()
-            Dibujo.disegna()
+            Dibujo.tablero()
             time.sleep(1.5)
             return self.puntoTotales
 
@@ -265,7 +261,7 @@ def baccarat(fichas):
                     Dibujo.elementMesa[43] = "GANADOR!!"
                     Dibujo.elementMesa[42] = "Perdedor..."
                 Dibujo.clear()
-                Dibujo.disegna()
+                Dibujo.tablero()
                 time.sleep(1.5)
             
             if computer.puntoTotales < self.puntoTotales: #-Si los puntos del "banco" son minores de los puntos del "jugador"
@@ -273,18 +269,18 @@ def baccarat(fichas):
                 self.fichas = self.fichas + self.apuesta #------------------Suma de fichas apostado al fichas actual.
 
                 if self.posicion == "jugador": #------------------------------Si el usuario es en posición "jugador"...
-                    Dibujo.elementMesa[34] = "     Fichas totales: "+str(fichas)
+                    Dibujo.elementMesa[34] = "     Fichas totales: "+str(self.fichas)
                     Dibujo.elementMesa[35] = ""
                     Dibujo.elementMesa[42] = "GANADOR!!"
                     Dibujo.elementMesa[43] = "Perdedor..."
                 else: #------------------------------------------Si el usuario es en posición "banco"...
-                    Dibujo.elementMesa[37] = "     Fichas totales: "+str(fichas)
+                    Dibujo.elementMesa[37] = "     Fichas totales: "+str(self.fichas)
                     Dibujo.elementMesa[36] = ""
                     Dibujo.elementMesa[43] = "GANADOR!!"
                     Dibujo.elementMesa[42] = "Perdedor..."
             Dibujo.clear()
-            Dibujo.disegna()
-            return fichas
+            Dibujo.tablero()
+            return self.fichas
 
         #--Función para resolver el empate
         def empate(self):
@@ -307,8 +303,8 @@ def baccarat(fichas):
                 Dibujo.elementMesa[23] = ""   
                 Dibujo.elementMesa[24] = "" 
                 Dibujo.clear()
-                Dibujo.disegna()
-                print('\n\t\t\t\t\t\t\t    ',end="")
+                Dibujo.tablero()
+                print('\n\t\t\t\t\t\t\t',end="")
                 Dibujo.effect("%s%sCarta Bonus para {}.%s".format(nombre) % (fg('red_3a'), attr('bold'), attr('reset')), .1)
                 time.sleep(1.5)
                 if self.posicion == "jugador": #------------------------------Si el usuario es en posición "jugador"...
@@ -331,7 +327,7 @@ def baccarat(fichas):
                 if self.puntoTotales != computer.puntoTotales:
                     empate = False
             Dibujo.clear()  
-            Dibujo.disegna()
+            Dibujo.tablero()
             time.sleep(.5)  
             
             return 
@@ -421,7 +417,7 @@ def baccarat(fichas):
             time.sleep(.5)
             print("\n\n\n\n\t\t\t\t\t\t     %s%sPress Enter%s" % (fg('sky_blue_2'), attr('bold'),attr('reset')))
    
-        def disegna():
+        def tablero():
             Dibujo.clear()
             print(Dibujo.color_2+Dibujo.linea+Dibujo.color_2+" ")
             print(Dibujo.color_3+Dibujo.linea_1)
