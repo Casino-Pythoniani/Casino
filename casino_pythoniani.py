@@ -15,8 +15,6 @@ caballos = "X"
 poker ="X"
 tycoon = "X"
 
-
-
 fichas = 300
 
 tecla= ""
@@ -155,13 +153,13 @@ while tecla != "Key.esc" and fichas > 0:
 
         try:
             if poker == "X":
-                #from poker import *
+                from Vicente.poker_casino.main_poker import *
                 poker = "V"
 
             fichas = ejecutar_poker(fichas)
 
         except Exception as e:
-            print ("Algo ha salido mal durante la ejecucion de la ruleta ")
+            print ("Algo ha salido mal durante la ejecucion de la poker ")
             print (e)
             sleep(3)
 
